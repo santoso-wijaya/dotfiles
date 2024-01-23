@@ -18,13 +18,11 @@ Included in this repo. Copy as `${HOME}/.vimrc` dotfile.
 
 ### Install plugin bundles
 
-The vim plugins that I use are included as git submodules here:
-*   [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
-*   [vim-css-color](https://github.com/ap/vim-css-color)
-*   [vim-sensible](https://github.com/tpope/vim-sensible)
+The vim plugins that I use are included as git submodules.
 
-They are cloned in this git repo under `./.vim/bundle/` directory. Copy the
-contents therein into the current workspace's `${HOME}/.vim/bundle/` directory.
+They are cloned in this git repo under [`.vim/bundle/`](.vim/bundle) director.
+Copy the contents therein into the current workspace's `${HOME}/.vim/bundle/`
+directory.
 
 ```sh
 $ mkdir -p ${HOME}/.vim/bundle && \
