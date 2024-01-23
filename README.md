@@ -20,7 +20,7 @@ Included in this repo. Copy as `${HOME}/.vimrc` dotfile.
 
 The vim plugins that I use are included as git submodules.
 
-They are cloned in this git repo under [`.vim/bundle/`](.vim/bundle) director.
+They are cloned in this git repo under [`.vim/bundle/`](.vim/bundle) directory.
 Copy the contents therein into the current workspace's `${HOME}/.vim/bundle/`
 directory.
 
