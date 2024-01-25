@@ -27,3 +27,9 @@ set expandtab
 set autoindent
 set smartindent
 
+" Do not clutter the current directory with swap, backup, undo files.
+set swapfile
+set directory=.swp/,~/.swp/,/tmp//
+set backupdir=.backup/,~/.backup/,/tmp//
+set undodir=.undo/,~/.undo/,/tmp//
+
