@@ -24,6 +24,8 @@ set showcmd                     " Show the last command.
 set showmatch                   " When a bracket is typed show its match.
 set smarttab                    " Only respect shiftwidth for code indents.
 set expandtab
+set tabstop=2
+set shiftwidth=2
 set autoindent
 set smartindent
 
