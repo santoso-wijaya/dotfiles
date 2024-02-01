@@ -43,3 +43,13 @@ $ find $(pwd -P)/.vim/bundle -type d -depth 1  -execdir \
       ln -s $(pwd -P)/.vim/bundle/{} ${HOME}/.vim/bundle/{} \;
 ```
 
+## Use in Codespaces / GitHub devcontainer
+
+Since this `dotfiles` repo contains an installation script `install.sh`, the
+dotfiles contained here will not be automatically copied over to a GitHub
+codespace or devcontainer.
+
+Instead, after `postCreateCommand`, the `install.sh` script will be executed
+automatically. I've structured it so that it will clone the dotfiles here and
+make the appropriate symlinks.
+
