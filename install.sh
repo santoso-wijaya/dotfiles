@@ -14,7 +14,7 @@ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 pushd ~
 git clone --recurse-submodules https://github.com/santoso-wijaya/dotfiles.git
 cd dotfiles
-find $(pwd -P)/.vim/bundle -maxdepth 1 -type d -execdir \
+find $(pwd -p)/.vim/bundle -maxdepth 1 -type d -execdir \
   ln -s $(pwd -P)/.vim/bundle/{} ${HOME}/.vim/bundle/{} \;
 ln -s $(pwd -P)/.vimrc ${HOME}/.vimrc
 popd

@@ -38,8 +38,9 @@ softlinks to `.vimrc` and the plugin directories under `.vim/bundle/`.
 $ mkdir -p ~/.vim/autoload ~/.vim/bundle && \
       curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 $ git clone --recurse-submodules https://github.com/santoso-wijaya/dotfiles.git
+$ cd dotfiles
 $ ln -s .vimrc ${HOME}/.vimrc
-$ find $(pwd -P)/.vim/bundle -type d -depth 1  -execdir \
+$ find $(pwd -p)/.vim/bundle -maxdepth 1 -type d -execdir \
       ln -s $(pwd -P)/.vim/bundle/{} ${HOME}/.vim/bundle/{} \;
 ```
 
