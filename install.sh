@@ -1,10 +1,10 @@
 #!/bin/bash
 
-apt-get update -q && apt-get upgrade
+apt-get update -qy && apt-get upgrade -qy
 apt-get install -qy --no-install-recommends \
   curl \
   git
-apt-get clean
+apt-get clean -qy
 
 
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
