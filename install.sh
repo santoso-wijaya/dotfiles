@@ -3,7 +3,8 @@
 apt-get update -qy && apt-get upgrade -qy
 apt-get install -qy --no-install-recommends \
   curl \
-  git
+  git \
+  vim
 apt-get clean -qy
 
 
