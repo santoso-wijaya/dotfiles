@@ -11,3 +11,4 @@ function use-nvim  {
   alias vi="nvim"
   alias view="nvim -R"
 }
+use-nvim

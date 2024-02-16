@@ -8,6 +8,16 @@ apt-get install -qy --no-install-recommends \
 apt-get clean -qy
 
 
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.unstage "reset HEAD --"
+git config --global alias.last "log -1 HEAD"
+git config --global alias.adog "log --all --decorate --oneline --graph"
+git config --global alias.xl "log --graph --abbrev=commit --decorate --date=relative --all"
+
+
 mkdir -p ~/.vim/autoload ~/.vim/bundle && \
   curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
