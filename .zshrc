@@ -6,9 +6,11 @@ if [ -d /opt/homebrew/opt/chruby ]; then
   chruby ruby-3.3.0 # run chruby to see actual version
 fi
 
-function use-nvim  {
-  alias vim="nvim"
-  alias vi="nvim"
-  alias view="nvim -R"
-}
-use-nvim
+if which nvim >/dev/null; then
+  function use-nvim  {
+    alias vim="nvim"
+    alias vi="nvim"
+    alias view="nvim -R"
+  }
+  use-nvim
+fi
