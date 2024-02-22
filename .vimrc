@@ -9,8 +9,15 @@ call plug#begin()
 " You can specify a custom plugin directory by passing it as the argument
 "   - e.g. `call plug#begin('~/.vim/plugged')`
 
+" Make sure you use single quotes
+
 " Shorthand notation; fetches https://github.com/tpope/vim-sensible
 Plug 'tpope/vim-sensible'
+
+Plug 'easymotion/vim-easymotion'
+
+" Any valid git URL is allowed
+Plug 'https://github.com/justinmk/vim-sneak.git'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
