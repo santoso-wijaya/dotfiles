@@ -2,10 +2,14 @@
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 "
+" Reload this vimrc file and install/update the following plugins with the
+" command:
+"   :PlugInstall
 call plug#begin()
 " The default plugin directory will be as follows:
 "   - Vim (Linux/macOS): '~/.vim/plugged'
-"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
+"   - Neovim (Linux/macOS/Windows): stdpath('data') + '/plugged'
+"     e.g., '~/.local/share/nvim/plugged'
 " You can specify a custom plugin directory by passing it as the argument
 "   - e.g. `call plug#begin('~/.vim/plugged')`
 
@@ -13,6 +17,7 @@ call plug#begin()
 
 " Shorthand notation; fetches https://github.com/tpope/vim-sensible
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-commentary'
 
 Plug 'easymotion/vim-easymotion'
 
