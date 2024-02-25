@@ -36,6 +36,10 @@ popd
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# Activate plugins specified in .vimrc
+# See: https://github.com/junegunn/vim-plug/issues/675#issuecomment-328157169
+vim +'PlugInstall --sync' +qa
+
 
 echo -e "dotfiles have been set up by:" > ~/dotfiles.txt
 echo -e "https://github.com/santoso-wijaya/dotfiles/blob/main/install.sh" >> ~/dotfiles.txt
