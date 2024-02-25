@@ -19,6 +19,8 @@ call plug#begin()
 Plug 'tpope/vim-sensible'
 " Binds 'gc' to toggle comments in visual mode
 Plug 'tpope/vim-commentary'
+" Syntax highlighting for Liquid templates
+Plug 'tpope/vim-liquid'
 
 " Binds some nifty, flighty navigation modes across a f ile
 Plug 'easymotion/vim-easymotion'
@@ -26,6 +28,12 @@ Plug 'easymotion/vim-easymotion'
 " Any valid git URL is allowed
 " Binds 's{char}{char}' as a quicker 'f' search
 Plug 'https://github.com/justinmk/vim-sneak.git'
+
+" Official Rust plugin
+" To enable formatting with `rustfmt`:
+" 1. Execute `rustup component add rustfmt`
+" 2. Activate with :RustFmt command
+Plug 'rust-lang/rust.vim'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
