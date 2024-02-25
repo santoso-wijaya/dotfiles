@@ -17,11 +17,14 @@ call plug#begin()
 
 " Shorthand notation; fetches https://github.com/tpope/vim-sensible
 Plug 'tpope/vim-sensible'
+" Binds 'gc' to toggle comments in visual mode
 Plug 'tpope/vim-commentary'
 
+" Binds some nifty, flighty navigation modes across a f ile
 Plug 'easymotion/vim-easymotion'
 
 " Any valid git URL is allowed
+" Binds 's{char}{char}' as a quicker 'f' search
 Plug 'https://github.com/justinmk/vim-sneak.git'
 
 " Initialize plugin system
