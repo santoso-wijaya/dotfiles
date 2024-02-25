@@ -57,6 +57,17 @@ call plug#end()
 execute pathogen#infect()
 
 
+" NERDTree keybindings
+nnoremap <C-t> :NERDTreeToggle<CR>
+" Start NERDTree when Vim is started without file arguments.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists('s:std_in') | NERDTree | endif
+" Start NERDTree when Vim starts with a directory argument, and open a fresh
+" buffer.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
+
+
 set nocompatible
 syntax on
 filetype plugin indent on
