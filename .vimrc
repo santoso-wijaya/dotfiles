@@ -35,6 +35,14 @@ Plug 'https://github.com/justinmk/vim-sneak.git'
 " 2. Activate with :RustFmt command
 Plug 'rust-lang/rust.vim'
 
+" A file system explorer in Vim
+Plug 'preservim/nerdtree'
+
+" Lean & mean status/tabline
+Plug 'https://github.com/vim-airline/vim-airline.git'
+
+Plug 'https://github.com/prabirshrestha/vim-lsp.git'
+
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
