@@ -94,7 +94,7 @@ filetype plugin indent on
 set background=dark
 colorscheme solarized
 
-set hlsearch
+set hlsearch  " Clear highlights afterward with <C-l>; mapped by vim-sensible
 set ruler
 set colorcolumn=80,120
 
