@@ -39,9 +39,12 @@ Plug 'rust-lang/rust.vim'
 Plug 'preservim/nerdtree'
 
 " Lean & mean status/tabline
-Plug 'https://github.com/vim-airline/vim-airline.git'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-Plug 'https://github.com/prabirshrestha/vim-lsp.git'
+" TODO: Experiment with LSP
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'prabirshrestha/async.vim'
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -55,6 +58,10 @@ call plug#end()
 " mkdir -p ~/.vim/autoload ~/.vim/bundle && \
 "     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 execute pathogen#infect()
+
+
+" Airline customizations; experiment at runtime with `:AirlineTheme` command.
+let g:airline_theme='solarized'
 
 
 " NERDTree keybindings
