@@ -7,7 +7,6 @@ apt-get install -qy --no-install-recommends \
   vim
 apt-get clean -qy
 
-
 git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
@@ -32,6 +31,10 @@ ln -s $(pwd -P)/.vimrc ${HOME}/.vimrc
 popd
 
 
+# For CoC: install nodejs
+curl -sL install-node.vercel.app/lts | bash
+
+
 # Install vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -39,6 +42,13 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Activate plugins specified in .vimrc
 # See: https://github.com/junegunn/vim-plug/issues/675#issuecomment-328157169
 vim +'PlugInstall --sync' +qa
+
+# Install CoC extensions
+# Discover more: https://www.npmjs.com/search?q=keywords%3Acoc.nvim
+vim +'CocInstall coc-python coc-tsserver coc-rust-analyzer' +qa
+vim +'CocInstall coc-markdownlint coc-yaml coc-toml' +qa
+vim +'CocInstall coc-html coc-css coc-json coc-git' +qa
+vim +'CocInstall coo-sql coc-xml coc-sh' +qa
 
 
 echo -e "dotfiles have been set up by:" > ~/dotfiles.txt
