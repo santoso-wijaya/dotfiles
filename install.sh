@@ -1,11 +1,13 @@
 #!/bin/bash
 
-apt-get update -qy && apt-get upgrade -qy
-apt-get install -qy --no-install-recommends \
+apt update -qy && apt-get upgrade -qy
+apt install -qy --no-install-recommends \
   curl \
   git \
+  nodejs \
+  npm \
   vim
-apt-get clean -qy
+apt clean -qy
 
 git config --global alias.co checkout
 git config --global alias.br branch
@@ -31,10 +33,6 @@ ln -s $(pwd -P)/.vimrc ${HOME}/.vimrc
 popd
 
 
-# For CoC: install nodejs
-curl -sL install-node.vercel.app/lts | bash
-
-
 # Install vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -42,6 +40,10 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Activate plugins specified in .vimrc
 # See: https://github.com/junegunn/vim-plug/issues/675#issuecomment-328157169
 vim +'PlugInstall --sync' +qa
+
+
+# NPM is required to install CoC extensions
+npm -v
 
 # Install CoC extensions
 # Discover more: https://www.npmjs.com/search?q=keywords%3Acoc.nvim
