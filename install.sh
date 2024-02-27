@@ -51,6 +51,8 @@ vim +'CocInstall coc-python coc-tsserver coc-rust-analyzer' +qa
 vim +'CocInstall coc-markdownlint coc-yaml coc-toml' +qa
 vim +'CocInstall coc-html coc-css coc-json coc-git' +qa
 vim +'CocInstall coo-sql coc-xml coc-sh' +qa
+# Install a CoC code formatter
+vim +'CocInstall coc-prettier' +qa
 
 
 echo -e "dotfiles have been set up by:" > ~/dotfiles.txt
