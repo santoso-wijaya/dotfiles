@@ -132,11 +132,16 @@ set undodir=.undo/,~/.undo/,/tmp//
 
 " CoC-recommended settings below
 
+" Some servers have issues with backup files, see #649
 set nobackup
 set nowritebackup
 
+" Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
+" delays and poor user experience
 set updatetime=300
 
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved
 set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate
