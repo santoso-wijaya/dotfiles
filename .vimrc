@@ -191,3 +191,10 @@ highlight CocFloating cterm=reverse ctermfg=12 ctermbg=0 guibg=Magenta
 
 " end CoC-recommended settings above
 
+
+" CoC extensions settings below
+
+" Use :Prettier to format the current buffer by coc-prettier.
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+
+" end CoC extensions settings above
