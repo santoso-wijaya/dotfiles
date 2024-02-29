@@ -83,7 +83,7 @@ set nocompatible
 syntax on
 filetype plugin indent on
 
-set background=dark
+set background=light
 colorscheme solarized
 
 set hlsearch  " Clear highlights afterward with <C-l>; mapped by vim-sensible
@@ -171,9 +171,9 @@ autocmd CursorHold * silent call CocActionAsync('highlight')
 nmap <leader>rn <Plug>(coc-rename)
 
 " The default PMenu (floating selection menu box) that appears has a color
-" scheme that clashes with solarized-dark, making it hard to see.
+" scheme that clashes with solarized, making it hard to see.
 " I copied these color settings from current PMenu values from :hi
-highlight CocFloating cterm=reverse ctermfg=12 ctermbg=0 guibg=Magenta
+highlight CocFloating cterm=reverse ctermfg=11 ctermbg=7 guibg=LightMagenta
 
 " end CoC-recommended settings above
 
