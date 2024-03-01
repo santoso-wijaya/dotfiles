@@ -22,7 +22,7 @@ Plug 'tpope/vim-commentary'
 " Syntax highlighting for Liquid templates
 Plug 'tpope/vim-liquid'
 
-" Binds some nifty, flighty navigation modes across a f ile
+" Binds some nifty, flighty navigation modes across a file
 Plug 'easymotion/vim-easymotion'
 
 " Any valid git URL is allowed
@@ -111,6 +111,14 @@ set directory=.swp/,~/.swp/,/tmp//
 set backupdir=.backup/,~/.backup/,/tmp//
 set undodir=.undo/,~/.undo/,/tmp//
 
+" Automatic closing of matching parens, quotes, etc
+inoremap { {}<Esc>ha
+inoremap ( ()<Esc>ha
+inoremap [ []<Esc>ha
+inoremap " ""<Esc>ha
+inoremap ' ''<Esc>ha
+inoremap ` ``<Esc>ha
+
 " CoC-recommended settings below
 
 " Some servers have issues with backup files, see #649
@@ -135,6 +143,9 @@ inoremap <silent><expr> <TAB>
       \ CheckBackspace() ? "\<Tab>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
 
 function! CheckBackspace() abort
   let col = col('.') - 1
