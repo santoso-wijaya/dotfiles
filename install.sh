@@ -57,6 +57,8 @@ vim +'CocInstall coc-prettier' +qa
 
 # Install Startship prompt
 curl -sS https://starship.rs/install.sh | sh
+touch ~/.bashrc
+echo -e 'eval "$(starship init bash)"' >> ~/.bashrc
 
 
 echo -e "dotfiles have been set up by:" > ~/dotfiles.txt
