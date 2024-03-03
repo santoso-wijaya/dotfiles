@@ -20,16 +20,16 @@ $kotlin\
 $haskell\
 $python\
 $ruby\
-[](fg:sol_blue bg:base2)\
+[](fg:sol_blue bg:sol_violet)\
 $docker_context\
-[](fg:base2 bg:base2)\
+[](fg:sol_violet bg:base2)\
 $time\
 [ ](fg:base2)\
 $line_break$character"""
 
-palette = 'solarized_light'
+palette = 'solarized'
 
-[palettes.solarized_light]
+[palettes.solarized]
 # background and content tones:
 #                           # DARK MODE             | LIGHT MODE
 base03        = '#002b36'   # background            | -
@@ -86,6 +86,7 @@ format = '[ $user ]($style)'
 
 [directory]
 style = "bg:sol_yellow fg:base3"
+read_only_style = "bg:sol_yellow fg:sol_magenta"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -160,7 +161,7 @@ format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
 [docker_context]
 symbol = ""
 style = "bg:base2"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:base2)]($style)'
+format = '[[ $symbol( $context) ](fg:base3 bg:sol_violet)]($style)'
 
 [time]
 disabled = false
