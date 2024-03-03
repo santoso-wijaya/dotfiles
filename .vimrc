@@ -116,7 +116,7 @@ inoremap { {}<Esc>ha
 inoremap ( ()<Esc>ha
 inoremap [ []<Esc>ha
 inoremap " ""<Esc>ha
-inoremap ' ''<Esc>ha
+" inoremap ' ''<Esc>ha
 inoremap ` ``<Esc>ha
 
 " CoC-recommended settings below
