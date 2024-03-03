@@ -1,0 +1,176 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+[](sol_orange)\
+$os\
+$username\
+[](bg:sol_yellow fg:sol_orange)\
+$directory\
+[](fg:sol_yellow bg:sol_cyan)\
+$git_branch\
+$git_status\
+[](fg:sol_cyan bg:sol_blue)\
+$c\
+$rust\
+$golang\
+$nodejs\
+$php\
+$java\
+$kotlin\
+$haskell\
+$python\
+[](fg:sol_blue bg:base2)\
+$docker_context\
+[](fg:base2 bg:base2)\
+$time\
+[ ](fg:base2)\
+$line_break$character"""
+
+palette = 'solarized_light'
+
+[palettes.solarized_light]
+# background and content tones:
+#                           # DARK MODE             | LIGHT MODE
+base03        = '#002b36'   # background            | -
+base02        = '#073642'   # background highlights | -
+base01        = '#586e75'   # comments              | opt. emph. content
+base00        = '#657b83'   # -                     | primary content
+base0         = '#839496'   # primary content       | -
+base1         = '#93a1a1'   # opt. emph. content    | comments
+base2         = '#eee8d5'   # -                     | background highlights
+base3         = '#fdf6e3'   # -                     | background
+# accent colors:
+sol_yellow    = '#b58900'
+sol_orange    = '#cb4b16'
+sol_red       = '#dc322f'
+sol_magenta   = '#d33682'
+sol_violet    = '#6c71c4'
+sol_blue      = '#268bd2'
+sol_cyan      = '#2aa198'
+sol_green     = '#859900'
+# Note that for tones, the normal relationship for background and body text
+# is `base03:base0` for dark mode and `base3:base00` for light mode.
+# Notice the "flipping" of leading 0?
+
+[os]
+disabled = false
+style = "bg:sol_orange fg:base3"
+
+[os.symbols]
+Windows = "󰍲"
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = ""
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[username]
+show_always = true
+style_user = "bg:sol_orange fg:base3"
+style_root = "bg:sol_orange fg:base3"
+format = '[ $user ]($style)'
+
+[directory]
+style = "bg:sol_yellow fg:base3"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Code" = "󰲋 "
+"workspace" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:sol_cyan"
+format = '[[ $symbol $branch ](fg:base3 bg:sol_cyan)]($style)'
+
+[git_status]
+style = "bg:sol_cyan"
+format = '[[($all_status$ahead_behind )](fg:base3 bg:sol_cyan)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:sol_blue"
+format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+
+[c]
+symbol = " "
+style = "bg:sol_blue"
+format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:sol_blue"
+format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:sol_blue"
+format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+
+[php]
+symbol = ""
+style = "bg:sol_blue"
+format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+
+[java]
+symbol = " "
+style = "bg:sol_blue"
+format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+
+[kotlin]
+symbol = ""
+style = "bg:sol_blue"
+format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+
+[haskell]
+symbol = ""
+style = "bg:sol_blue"
+format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+
+[python]
+symbol = ""
+style = "bg:sol_blue"
+format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:base2"
+format = '[[ $symbol( $context) ](fg:#83a598 bg:base2)]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:base3"
+format = '[[  $time ](fg:base00 bg:base2)]($style)'
+
+[line_break]
+disabled = false
+
+[character]
+disabled = false
+success_symbol = '[>](bold fg:sol_green)'
+error_symbol = '[>](bold fg:sol_red)'
+vimcmd_symbol = '[<](bold fg:sol_green)'
+vimcmd_replace_one_symbol = '[<](bold fg:sol_violet)'
+vimcmd_replace_symbol = '[<](bold fg:sol_violet)'
+vimcmd_visual_symbol = '[<](bold fg:sol_yellow)'
+
