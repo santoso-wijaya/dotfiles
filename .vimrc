@@ -21,6 +21,8 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 " Syntax highlighting for Liquid templates
 Plug 'tpope/vim-liquid'
+" Automatically append `endfunction` tokens for supported languages
+Plug 'tpope/vim-endwise'
 
 " Binds some nifty, flighty navigation modes across a file
 Plug 'easymotion/vim-easymotion'
