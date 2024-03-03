@@ -60,6 +60,11 @@ vim +'CocInstall coc-prettier' +qa
 curl -sS https://starship.rs/install.sh | sh -s -- --yes
 touch ~/.bashrc
 echo -e 'eval "$(starship init bash)"' >> ~/.bashrc
+# Configure Starship
+pushd ~
+cd dotfiles
+ln -s $(pwd -P)/.config/starship.toml ${HOME}/.config/starship.toml
+popd
 
 
 echo -e "dotfiles have been set up by:" > ~/dotfiles.txt
