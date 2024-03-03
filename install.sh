@@ -1,15 +1,5 @@
 #!/bin/bash
 
-apt update -qy && apt-get upgrade -qy
-apt install -qy --no-install-recommends \
-  curl \
-  fonts-powerline \
-  git \
-  nodejs \
-  npm \
-  vim
-apt clean -qy
-
 git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.ci commit
