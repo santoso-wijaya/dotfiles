@@ -19,6 +19,7 @@ $java\
 $kotlin\
 $haskell\
 $python\
+$ruby\
 [](fg:sol_blue bg:base2)\
 $docker_context\
 [](fg:base2 bg:base2)\
@@ -151,6 +152,11 @@ symbol = ""
 style = "bg:sol_blue"
 format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
 
+[ruby]
+symbol = ""
+style = "bg:sol_blue"
+format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+
 [docker_context]
 symbol = ""
 style = "bg:base2"
@@ -168,8 +174,8 @@ disabled = false
 [character]
 disabled = false
 success_symbol = '[>](bold fg:sol_green)'
-error_symbol = '[>](bold fg:sol_red)'
-vimcmd_symbol = '[<](bold fg:sol_green)'
+error_symbol = '[✗](bold fg:sol_red)'
+vimcmd_symbol = '[V](bold fg:sol_green) '
 vimcmd_replace_one_symbol = '[<](bold fg:sol_violet)'
 vimcmd_replace_symbol = '[<](bold fg:sol_violet)'
 vimcmd_visual_symbol = '[<](bold fg:sol_yellow)'
