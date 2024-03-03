@@ -60,6 +60,12 @@ execute pathogen#infect()
 
 " Airline customizations; experiment at runtime with `:AirlineTheme` command.
 let g:airline_theme='solarized'
+" Automatically displays all buffers when there's only one tab open.
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+let g:airline#extensions#coc#enabled = 1
+let g:airline#extensions#nerdtree_statusline = 1
 
 
 " NERDTree keybindings

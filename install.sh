@@ -3,6 +3,7 @@
 apt update -qy && apt-get upgrade -qy
 apt install -qy --no-install-recommends \
   curl \
+  fonts-powerline \
   git \
   nodejs \
   npm \
