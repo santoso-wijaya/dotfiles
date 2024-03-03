@@ -55,6 +55,10 @@ vim +'CocInstall coo-sql coc-xml coc-sh' +qa
 vim +'CocInstall coc-prettier' +qa
 
 
+# Install Startship prompt
+curl -sS https://starship.rs/install.sh | sh
+
+
 echo -e "dotfiles have been set up by:" > ~/dotfiles.txt
 echo -e "https://github.com/santoso-wijaya/dotfiles/blob/main/install.sh" >> ~/dotfiles.txt
 

@@ -23,3 +23,7 @@ function ya() {
 	fi
 	rm -f -- "$tmp"
 }
+
+if which starship > /dev/null; then
+  eval "$(starship init zsh)"
+fi
