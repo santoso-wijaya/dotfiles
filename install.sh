@@ -44,6 +44,8 @@ vim +'CocInstall coc-html coc-css coc-json coc-git' +qa
 vim +'CocInstall coo-sql coc-xml coc-sh' +qa
 # Install a CoC code formatter
 vim +'CocInstall coc-prettier' +qa
+# Link CocConfig file
+ln -s ~/dotfiles/.vim/coc-settings.json ~/.vim/coc-settings.json
 
 
 # Install Starship prompt
