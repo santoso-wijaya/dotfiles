@@ -56,8 +56,8 @@ vim +'CocInstall coo-sql coc-xml coc-sh' +qa
 vim +'CocInstall coc-prettier' +qa
 
 
-# Install Startship prompt
-curl -sS https://starship.rs/install.sh | sh
+# Install Starship prompt
+curl -sS https://starship.rs/install.sh | sh -s -- --yes
 touch ~/.bashrc
 echo -e 'eval "$(starship init bash)"' >> ~/.bashrc
 
