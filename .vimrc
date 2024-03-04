@@ -121,12 +121,14 @@ set backupdir=.backup/,~/.backup/,/tmp//
 set undodir=.undo/,~/.undo/,/tmp//
 
 " Automatic closing of matching parens, quotes, etc
-inoremap { {}<Esc>ha
-inoremap ( ()<Esc>ha
-inoremap [ []<Esc>ha
-inoremap " ""<Esc>ha
-" inoremap ' ''<Esc>ha
-inoremap ` ``<Esc>ha
+" Use <C-v> in INSERT mode to escape the remapping done here
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 
 " CoC-recommended settings below
 
