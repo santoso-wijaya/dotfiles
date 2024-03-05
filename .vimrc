@@ -47,6 +47,10 @@ Plug 'vim-airline/vim-airline-themes'
 " Using CoC for LSP
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" Adds icons to popular plugins
+" Requires: a Nerd Font installed and used
+Plug 'ryanoasis/vim-devicons'
+
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
@@ -68,7 +72,15 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#nerdtree_statusline = 1
 
+" devicons settings
+let g:webdevicons_enable = 1
+let g:webdevicons_enable_nerdtree = 1
+let g:webdevicons_enable_airline_tabline = 1
+let g:webdevicons_enable_airline_statusline = 1
 
+
+" NERDTree settings
+let g:NERDTreeShowHidden = 1
 " NERDTree keybindings
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -89,6 +101,7 @@ autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' 
 
 
 set nocompatible
+set encoding=UTF-8
 syntax on
 filetype plugin indent on
 
