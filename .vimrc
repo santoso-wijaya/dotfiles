@@ -17,15 +17,12 @@ call plug#begin()
 
 " Shorthand notation; fetches https://github.com/tpope/vim-sensible
 Plug 'tpope/vim-sensible'
-" Binds 'gc' to toggle comments in visual mode
+" Binds 'gc' to toggle comments in Visual mode, and 'gcc' in Normal mode
 Plug 'tpope/vim-commentary'
 " Syntax highlighting for Liquid templates
 Plug 'tpope/vim-liquid'
 " Automatically append `endfunction` tokens for supported languages
 Plug 'tpope/vim-endwise'
-
-" Binds some nifty, flighty navigation modes across a file
-Plug 'easymotion/vim-easymotion'
 
 " Any valid git URL is allowed
 " Binds 's{char}{char}' as a quicker 'f' search
@@ -50,6 +47,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Adds icons to popular plugins
 " Requires: a Nerd Font installed and used
 Plug 'ryanoasis/vim-devicons'
+
+if has('nvim')
+  Plug 'echasnovski/mini.nvim'
+else
+  " Binds some nifty, flighty navigation modes across a file
+  Plug 'easymotion/vim-easymotion'
+endif
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -133,15 +137,22 @@ set directory=.swp/,~/.swp/,/tmp//
 set backupdir=.backup/,~/.backup/,/tmp//
 set undodir=.undo/,~/.undo/,/tmp//
 
-" Automatic closing of matching parens, quotes, etc
-" Use <C-v> in INSERT mode to escape the remapping done here
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+if !has('nvim')
+  " To escape the auto-closer here, use <C-v> in insert mode.
+  inoremap " ""<left>
+  inoremap ' ''<left>
+  inoremap ( ()<left>
+  inoremap [ []<left>
+  inoremap { {}<left>
+  inoremap {<CR> {<CR>}<ESC>O
+  inoremap {;<CR> {<CR>};<ESC>O
+  " On nvim, the above is not necessary; they are superseded by mini.pairs
+
+  " Remap activator for vim-easymotion to match mini.jump2d
+  " e.g. <CR>w to search for jump anchors forward in visible buffer.
+  "      With mini.jump2d, though, <CR> alone activates a similar function.
+  nnoremap <CR> <Plug>(easymotion-prefix)
+endif
 
 " CoC-recommended settings below
 
@@ -219,3 +230,9 @@ highlight CocFloating cterm=reverse ctermfg=11 ctermbg=7 guibg=LightMagenta
 command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
 
 " end CoC extensions settings above
+
+
+if has('nvim')
+  lua require('init')
+endif
+
