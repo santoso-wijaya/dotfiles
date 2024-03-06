@@ -173,10 +173,10 @@ disabled = false
 
 [character]
 disabled = false
-success_symbol = '[>](bold fg:sol_green)'
+success_symbol = '[❯](bold fg:sol_green)'
 error_symbol = '[✗](bold fg:sol_red)'
 vimcmd_symbol = '[V](bold fg:sol_green) '
-vimcmd_replace_one_symbol = '[<](bold fg:sol_violet)'
-vimcmd_replace_symbol = '[<](bold fg:sol_violet)'
-vimcmd_visual_symbol = '[<](bold fg:sol_yellow)'
+vimcmd_replace_one_symbol = '[❮](bold fg:sol_violet)'
+vimcmd_replace_symbol = '[❮](bold fg:sol_violet)'
+vimcmd_visual_symbol = '[❮](bold fg:sol_yellow)'
 
