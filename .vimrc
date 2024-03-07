@@ -31,6 +31,9 @@ Plug 'ap/vim-css-color'
 " Binds 's{char}{char}' as a quicker 'f' search
 Plug 'https://github.com/justinmk/vim-sneak.git'
 
+" Display and manage marks in the gutter
+Plug 'https://github.com/kshenoy/vim-signature.git'
+
 " Official Rust plugin
 " To enable formatting with `rustfmt`:
 " 1. Execute `rustup component add rustfmt`
