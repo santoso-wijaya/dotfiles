@@ -164,8 +164,9 @@ set nowritebackup
 " delays and poor user experience
 set updatetime=300
 
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved
+" Always show the signcolumn (the 'gutter'), otherwise it would shift the text
+" each time diagnostics appear/become resolved.
+" The gutter is also useful for displaying marks, diff symbols, etc.
 set signcolumn=yes
 
 " Use tab for trigger completion with characters ahead and navigate
