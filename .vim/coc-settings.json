@@ -1,6 +1,5 @@
 // Execute `:CocConfig` command and then paste the content of this file there.
 {
-  "coc.source.around.enable": false,
   "colors.enable": true,
   "suggest.noselect": true
 }

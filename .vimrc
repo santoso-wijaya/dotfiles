@@ -223,6 +223,10 @@ highlight CocFloating cterm=reverse ctermfg=11 ctermbg=7 guibg=LightMagenta
 
 " end CoC-recommended settings above
 
+" My CoC settings
+
+" Disable auto-complete suggestions in Markdown files
+autocmd FileType markdown let b:coc_suggest_disable = 1
 
 " CoC extensions settings below
 
