@@ -24,6 +24,9 @@ Plug 'tpope/vim-liquid'
 " Automatically append `endfunction` tokens for supported languages
 Plug 'tpope/vim-endwise'
 
+Plug 'altercation/vim-colors-solarized'
+Plug 'ap/vim-css-color'
+
 " Any valid git URL is allowed
 " Binds 's{char}{char}' as a quicker 'f' search
 Plug 'https://github.com/justinmk/vim-sneak.git'
@@ -58,12 +61,6 @@ endif
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
 call plug#end()
-
-
-" First, install pathogen in your system with:
-" mkdir -p ~/.vim/autoload ~/.vim/bundle && \
-"     curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-execute pathogen#infect()
 
 
 " Airline customizations; experiment at runtime with `:AirlineTheme` command.

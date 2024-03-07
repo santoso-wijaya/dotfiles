@@ -34,7 +34,5 @@ require('mini.animate').setup({
 -- Highlight certain patterns (TODO, FIXME, etc)
 require('mini.hipatterns').setup()
 
-require('mini.notify').setup()
-
 -- ######### end mini.nvim plugin configs ######################################
 

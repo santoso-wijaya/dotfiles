@@ -1,9 +1,3 @@
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/bundle/vim-css-color"]
-	path = .vim/bundle/vim-css-color
-	url = https://github.com/ap/vim-css-color.git
-[submodule ".vim/bundle/vim-sensible"]
-	path = .vim/bundle/vim-sensible
-	url = https://github.com/tpope/vim-sensible.git
+[submodule "deps/vim-plug"]
+	path = deps/vim-plug
+	url = https://github.com/junegunn/vim-plug.git
