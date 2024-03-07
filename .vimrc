@@ -21,6 +21,8 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 " Syntax highlighting for Liquid templates
 Plug 'tpope/vim-liquid'
+" `aj`: textobject for the outermost JSON object; `gqaj`: to pretty print, etc
+Plug 'tpope/vim-jdaddy'
 " Automatically append `endfunction` tokens for supported languages
 Plug 'tpope/vim-endwise'
 " Surround a selection or textobject under cursor with quotes, HTML tags, etc
