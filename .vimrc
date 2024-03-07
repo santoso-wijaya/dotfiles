@@ -28,9 +28,6 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'ap/vim-css-color'
 
 " Any valid git URL is allowed
-" Binds 's{char}{char}' as a quicker 'f' search
-Plug 'https://github.com/justinmk/vim-sneak.git'
-
 " Display and manage marks in the gutter
 Plug 'https://github.com/kshenoy/vim-signature.git'
 
@@ -147,12 +144,18 @@ if !has('nvim')
   inoremap {<CR> {<CR>}<ESC>O
   inoremap {;<CR> {<CR>};<ESC>O
   " On nvim, the above is not necessary; they are superseded by mini.pairs
-
-  " Remap activator for vim-easymotion to match mini.jump2d
-  " e.g. <CR><CR>w to search for jump anchors forward in visible buffer.
-  "      With mini.jump2d, though, <CR><CR> alone activates a similar function.
-  nnoremap <CR><CR> <Plug>(easymotion-prefix)
 endif
+
+" Remap activator for vim-easymotion to match mini.jump2d
+" e.g. <Leader><Leader>w to search for jump anchors forward in visible buffer
+"      With mini.jump2d, though, <CR><CR> alone activates a similar function.
+nnoremap <Leader><Leader> <Plug>(easymotion-prefix)
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{char}{label}`
+nmap s <Plug>(easymotion-overwin-f2)
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
 
 " CoC-recommended settings below
 
