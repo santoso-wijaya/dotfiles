@@ -23,6 +23,11 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-liquid'
 " Automatically append `endfunction` tokens for supported languages
 Plug 'tpope/vim-endwise'
+" Surround a selection or textobject under cursor with quotes, HTML tags, etc
+Plug 'tpope/vim-surround'
+
+" Binds some nifty, flighty navigation modes across a file
+Plug 'easymotion/vim-easymotion'
 
 Plug 'altercation/vim-colors-solarized'
 Plug 'ap/vim-css-color'
@@ -53,9 +58,6 @@ Plug 'ryanoasis/vim-devicons'
 
 if has('nvim')
   Plug 'echasnovski/mini.nvim'
-else
-  " Binds some nifty, flighty navigation modes across a file
-  Plug 'easymotion/vim-easymotion'
 endif
 
 " Initialize plugin system
