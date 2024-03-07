@@ -15,8 +15,17 @@ require('mini.bracketed').setup()
 -- recognized, either (e.g. Ness').
 require('mini.pairs').setup()
 
--- Alternative to vim-easymotion; by default activate with simple <CR>
-require('mini.jump2d').setup()
+-- Alternative to vim-easymotion; activate with <CR><CR>
+require('mini.jump2d').setup({
+  -- Same as vim-easymotion
+  labels = 'hklyuiopnm,qwertzxcvbasdgjf;',
+  mappings = {
+    start_jumping = '<CR><CR>',
+  },
+})
+vim.cmd([[
+  highlight MiniJump2dSpot cterm=undercurl,bold ctermfg=1 gui=undercurl,bold guisp=Red
+]])
 
 -- Highlight trailing whitespaces; trim all with :MiniTrailspace.trim();
 -- trim all trailing empty lines with :MiniTrailspace.trim_last_lines()
@@ -25,11 +34,6 @@ require('mini.trailspace').setup()
 -- After selecting in Visual mode, move blocks of text with <M-hjkl>, etc
 -- Also works in Normal mode, it moves the current line under cursor
 require('mini.move').setup()
-
--- Animate cursor movements (when jumping between marks in a buffer)
-require('mini.animate').setup({
-  scroll = { enable = false }
-})
 
 -- Highlight certain patterns (TODO, FIXME, etc)
 require('mini.hipatterns').setup()

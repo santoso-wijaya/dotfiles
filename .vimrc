@@ -146,9 +146,9 @@ if !has('nvim')
   " On nvim, the above is not necessary; they are superseded by mini.pairs
 
   " Remap activator for vim-easymotion to match mini.jump2d
-  " e.g. <CR>w to search for jump anchors forward in visible buffer.
-  "      With mini.jump2d, though, <CR> alone activates a similar function.
-  nnoremap <CR> <Plug>(easymotion-prefix)
+  " e.g. <CR><CR>w to search for jump anchors forward in visible buffer.
+  "      With mini.jump2d, though, <CR><CR> alone activates a similar function.
+  nnoremap <CR><CR> <Plug>(easymotion-prefix)
 endif
 
 " CoC-recommended settings below
