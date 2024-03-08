@@ -24,7 +24,8 @@ require('mini.jump2d').setup({
   },
 })
 vim.cmd([[
-  highlight MiniJump2dSpot cterm=undercurl,bold ctermfg=1 gui=undercurl,bold guisp=Red
+  highlight MiniJump2dSpot cterm=undercurl,bold ctermfg=1
+      \ gui=undercurl,bold guisp=Red guifg=Red guibg=None
 ]])
 
 -- Highlight trailing whitespaces; trim all with :MiniTrailspace.trim();
