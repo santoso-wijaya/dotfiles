@@ -156,15 +156,14 @@ if !has('nvim')
 endif
 
 " Remap activator for vim-easymotion to match mini.jump2d
-" e.g. <Leader><Leader>w to search for jump anchors forward in visible buffer
-"      With mini.jump2d, though, <CR><CR> alone activates a similar function.
-nnoremap <Leader><Leader> <Plug>(easymotion-prefix)
+" e.g. <Leader>w to search for jump anchors to words forward in visible buffer
+"      With mini.jump2d, though, <Leader><Leader> activates a similar function.
+nnoremap <Leader> <Plug>(easymotion-prefix)
 " Jump to anywhere you want with minimal keystrokes, with just one key binding.
 " `s{char}{char}{label}`
 nmap s <Plug>(easymotion-overwin-f2)
-" JK motions: Line motions (go to any line in the visible buffer, up or down)
-map <Leader>j <Plug>(easymotion-j)
-map <Leader>k <Plug>(easymotion-k)
+" Set the characters used for jump marker name; lowercase only to avoid chording
+let g:EasyMotion_keys = 'hklyuiopnm,qwertzxcvbasdgjf;'
 
 " CoC-recommended settings below
 

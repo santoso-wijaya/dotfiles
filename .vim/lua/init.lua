@@ -20,7 +20,7 @@ require('mini.jump2d').setup({
   -- Same as vim-easymotion
   labels = 'hklyuiopnm,qwertzxcvbasdgjf;',
   mappings = {
-    start_jumping = '<CR><CR>',
+    start_jumping = '<Leader><Leader>',
   },
 })
 vim.cmd([[
