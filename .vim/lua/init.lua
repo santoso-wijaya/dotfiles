@@ -42,8 +42,8 @@ require('mini.hipatterns').setup()
 -- ######### end mini.nvim plugin configs ######################################
 
 vim.o.guifont = "MonaspiceNe Nerd Font,FiraCode Nerd Font,Monaspace Neon,Fira Code"
-vim.g.neovide_theme = 'solarized'
-vim.g.neovide_input_macos_alt_is_meta = true
-vim.g.neovide_cursor_vfx_mode = "pixiedust"
-vim.g.neovide_remember_window_size = true
+
+if vim.g.neovide then
+  require 'neovide_config'
+end
 

@@ -1,0 +1,14 @@
+[font]
+normal = [
+  "MonaspiceNe Nerd Font",
+  "FiraCode Nerd Font",
+  "Monaspace Neon",
+  "Fira Code",
+]
+size = 13
+
+[font.features]
+MonaspiceNe = ["+calt", "+liga", "+dlig", "+ss01", "+ss02", "+ss03", "+ss04", "+ss05", "+ss06", "+ss07", "+ss08"]
+Monaspace = ["+calt", "+liga", "+dlig", "+ss01", "+ss02", "+ss03", "+ss04", "+ss05", "+ss06", "+ss07", "+ss08"]
+FiraCode = ["+cv01", "+cv03", "+cv11", "+onum", "+cv30", "+ss01", "+ss02", "+ss03", "+ss04", "+ss05", "+ss06", "+ss07"]
+Fira = ["+cv01", "+cv03", "+cv11", "+onum", "+cv30", "+ss01", "+ss02", "+ss03", "+ss04", "+ss05", "+ss06", "+ss07"]
