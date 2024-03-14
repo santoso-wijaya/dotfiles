@@ -60,6 +60,8 @@ Plug 'ryanoasis/vim-devicons'
 
 if has('nvim')
   Plug 'echasnovski/mini.nvim'
+  " Open folders as vim buffers and manipulate files
+  Plug 'stevearc/oil.nvim'
 endif
 
 " Initialize plugin system

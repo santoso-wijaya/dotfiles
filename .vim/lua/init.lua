@@ -1,6 +1,6 @@
 -- ######### mini.nvim plugin configs ##########################################
-
 -- Extend a/i textobjects, useful in Visual mode.
+
 -- e.g. va' would select 'mini.ai' and vi' would select the same without ''
 require('mini.ai').setup()
 
@@ -38,6 +38,25 @@ require('mini.move').setup()
 
 -- Highlight certain patterns (TODO, FIXME, etc)
 require('mini.hipatterns').setup()
+
+require('oil').setup({
+  -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
+  -- Set to false if you still want to use netrw.
+  default_file_explorer = true,
+  columns = {
+    "icon",
+    "permissions",
+    "size",
+  },
+  view_options = {
+    -- Show files and directories that start with "."
+    show_hidden = true,
+    -- This function defines what will never be shown, even when `show_hidden` is set
+    is_always_hidden = function(name, bufnr)
+      return name == '.DS_Store'
+    end,
+  },
+})
 
 -- ######### end mini.nvim plugin configs ######################################
 
