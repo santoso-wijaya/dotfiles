@@ -28,6 +28,12 @@ Plug 'tpope/vim-endwise'
 " Surround a selection or textobject under cursor with quotes, HTML tags, etc
 Plug 'tpope/vim-surround'
 
+" fzf is a general-purpose command-line fuzzy finder
+" :FZF command invokes the basic file selector
+" Open selected files with <CR>, <C-T>, <C-X>, or <C-V> for current window,
+" new tab, horizontal split, and vertical split respectively.
+Plug 'junegunn/fzf', { 'do': { -> fz#install() }}   " with a post-update hook
+
 " Binds some nifty, flighty navigation modes across a file
 Plug 'easymotion/vim-easymotion'
 
@@ -111,6 +117,25 @@ autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+'
     \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 
+" fzf settings
+" Customize fzf colors to match your color scheme
+" - fzf#wrap translates this to a set of `--color` options
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+
 set nocompatible
 set encoding=UTF-8
 syntax on
@@ -119,6 +144,32 @@ filetype plugin indent on
 syntax enable
 set background=light
 colorscheme solarized
+" Terminal colors for solarized color scheme
+if has('nvim')
+  let g:terminal_color_0 = '#002b36'  " brblack
+  let g:terminal_color_1 = '#073642'  " black
+  let g:terminal_color_2 = '#586e75'  " brgreen
+  let g:terminal_color_3 = '#657b83'  " bryellow
+  let g:terminal_color_4 = '#839496'  " brblue
+  let g:terminal_color_5 = '#93a1a1'  " brcyan
+  let g:terminal_color_6 = '#eee8d5'  " white
+  let g:terminal_color_7 = '#fdf6e3'  " brwhite
+  let g:terminal_color_8 = '#b58900'  " yellow
+  let g:terminal_color_9 = '#cb4b16'  " brred
+  let g:terminal_color_10 = '#dc322f' " red
+  let g:terminal_color_11 = '#d33682' " magenta
+  let g:terminal_color_12 = '#6c71c4' " brmagenta
+  let g:terminal_color_13 = '#268bd2' " blue
+  let g:terminal_color_14 = '#2aa198' " cyan
+  let g:terminal_color_15 = '#859900' " green
+else
+  let g:terminal_ansi_colors = [
+    \ '#002b36', '#073642', '#586e75', '#657b83',
+    \ '#839496', '#93a1a1', '#eee8d5', '#fdf6e3',
+    \ '#b58900', '#cb4b16', '#dc322f', '#d33682',
+    \ '#6c71c4', '#268bd2', '#2aa198', '#859900'
+  \ ]
+endif
 
 set hlsearch  " Clear highlights afterward with <C-l>; mapped by vim-sensible
 set ruler
