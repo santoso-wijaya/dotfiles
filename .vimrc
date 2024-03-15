@@ -32,7 +32,7 @@ Plug 'tpope/vim-surround'
 " :FZF command invokes the basic file selector
 " Open selected files with <CR>, <C-T>, <C-X>, or <C-V> for current window,
 " new tab, horizontal split, and vertical split respectively.
-Plug 'junegunn/fzf', { 'do': { -> fz#install() }}   " with a post-update hook
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() }}   " with a post-update hook
 
 " Binds some nifty, flighty navigation modes across a file
 Plug 'easymotion/vim-easymotion'
@@ -134,6 +134,11 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
 
 
 set nocompatible
