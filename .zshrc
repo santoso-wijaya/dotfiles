@@ -12,7 +12,6 @@ if which nvim >/dev/null; then
     alias vi="nvim"
     alias view="nvim -R"
   }
-  use-nvim
 fi
 
 function ya() {
