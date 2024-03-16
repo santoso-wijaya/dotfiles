@@ -33,19 +33,19 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 vim +'PlugInstall --sync' +qa
 
 
-# NPM is required to install CoC extensions
-npm -v
+# # NPM is required to install CoC extensions
+# npm -v
 
-# Install CoC extensions
-# Discover more: https://www.npmjs.com/search?q=keywords%3Acoc.nvim
-vim +'CocInstall coc-python coc-tsserver coc-rust-analyzer' +qa
-vim +'CocInstall coc-markdownlint coc-yaml coc-toml' +qa
-vim +'CocInstall coc-html coc-css coc-json coc-git' +qa
-vim +'CocInstall coo-sql coc-xml coc-sh' +qa
-# Install a CoC code formatter
-vim +'CocInstall coc-prettier' +qa
-# Link CocConfig file
-ln -sf ~/dotfiles/.vim/coc-settings.json ~/.vim/coc-settings.json
+# # Install CoC extensions
+# # Discover more: https://www.npmjs.com/search?q=keywords%3Acoc.nvim
+# vim +'CocInstall coc-python coc-tsserver coc-rust-analyzer' +qa
+# vim +'CocInstall coc-markdownlint coc-yaml coc-toml' +qa
+# vim +'CocInstall coc-html coc-css coc-json coc-git' +qa
+# vim +'CocInstall coo-sql coc-xml coc-sh' +qa
+# # Install a CoC code formatter
+# vim +'CocInstall coc-prettier' +qa
+# # Link CocConfig file
+# ln -sf ~/dotfiles/.vim/coc-settings.json ~/.vim/coc-settings.json
 
 
 # Install Starship prompt
