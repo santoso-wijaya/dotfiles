@@ -27,6 +27,8 @@ Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-endwise'
 " Surround a selection or textobject under cursor with quotes, HTML tags, etc
 Plug 'tpope/vim-surround'
+" Vim analog to oil.nvim
+Plug 'tpope/vim-vinegar'
 
 " fzf is a general-purpose command-line fuzzy finder
 " :FZF command invokes the basic file selector
