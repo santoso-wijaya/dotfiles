@@ -45,8 +45,8 @@ require('oil').setup({
   default_file_explorer = true,
   columns = {
     "icon",
-    "permissions",
-    "size",
+    -- "permissions",
+    -- "size",
   },
   view_options = {
     -- Show files and directories that start with "."

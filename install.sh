@@ -19,8 +19,8 @@ pushd ~
 git clone --recurse-submodules https://github.com/santoso-wijaya/dotfiles.git
 cd dotfiles
 find $(pwd -P)/.vim/bundle -maxdepth 1 -type d -execdir \
-  ln -s $(pwd -P)/.vim/bundle/{} ${HOME}/.vim/bundle/{} \;
-ln -s $(pwd -P)/.vimrc ${HOME}/.vimrc
+  ln -sf $(pwd -P)/.vim/bundle/{} ${HOME}/.vim/bundle/{} \;
+ln -sf $(pwd -P)/.vimrc ${HOME}/.vimrc
 popd
 
 
@@ -45,7 +45,7 @@ vim +'CocInstall coo-sql coc-xml coc-sh' +qa
 # Install a CoC code formatter
 vim +'CocInstall coc-prettier' +qa
 # Link CocConfig file
-ln -s ~/dotfiles/.vim/coc-settings.json ~/.vim/coc-settings.json
+ln -sf ~/dotfiles/.vim/coc-settings.json ~/.vim/coc-settings.json
 
 
 # Install Starship prompt
@@ -55,7 +55,7 @@ echo -e 'eval "$(starship init bash)"' >> ~/.bashrc
 # Configure Starship
 pushd ~
 cd dotfiles
-ln -s $(pwd -P)/.config/starship.toml ${HOME}/.config/starship.toml
+ln -sf $(pwd -P)/.config/starship.toml ${HOME}/.config/starship.toml
 popd
 
 
