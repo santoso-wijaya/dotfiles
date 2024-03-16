@@ -8,8 +8,6 @@ args = ["-l"]
 dimensions = { columns = 240, lines = 80 }
 padding = { x = 5, y = 5 }
 dynamic_padding = true
-opacity = 0.8
-blur = true # Only works on MacOS
 
 [font]
 normal.family = "MonaspiceNe Nerd Font"
