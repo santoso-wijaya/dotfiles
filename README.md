@@ -4,12 +4,12 @@
 
 ### Pre-requisites
 
-1.  Set up [vim-plug](https://github.com/junegunn/vim-plug), a plugin manager.
+1  Set up [vim-plug](https://github.com/junegunn/vim-plug), a plugin manager.
 
-    ```sh
-    $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-          https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    ```
+   ```sh
+   $ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+   ```
 
 ### `.vimrc` file
 
@@ -44,19 +44,20 @@ $ find $(pwd -P)/.vim/bundle -maxdepth 1 -type d -execdir \
 ```
 
 ### Install additional plugins
+
 I'm also using [vim-plug](https://github.com/junegunn/vim-plug) as a plugin
 manager. To install all the `Plug ...` plugins specified in the vimrc file from
 the command line, execute:
 
 ```sh
-$ vim +'PlugInstall --sync' +qa
+vim +'PlugInstall --sync' +qa
 ```
 
 For NeoVim:
 
 ```sh
-$ nvim --headless +PlugInstall +qa
-$ nvim +UpdateRemotePlugins +qa
+nvim --headless +PlugInstall +qa && \
+nvim +UpdateRemotePlugins +qa
 ```
 
 ## Use in Codespaces / GitHub devcontainer
