@@ -36,3 +36,9 @@ magenta     = '0x6c71c4'
 cyan        = '0x93a1a1'
 white       = '0xfdf6e3'
 
+[keyboard]
+bindings = [
+  # The default "Space"+"Shift|Control" keybinding for this is captured by the
+  # Mac OS for something... it doesn't trigger Vi mode unless I remap it here.
+  { key = "Space", mods = "Shift", mode = "~Search", action = "ToggleViMode" },
+]
