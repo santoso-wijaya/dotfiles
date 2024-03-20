@@ -46,12 +46,6 @@ Plug 'ap/vim-css-color'
 " Display and manage marks in the gutter
 Plug 'https://github.com/kshenoy/vim-signature.git'
 
-" Official Rust plugin
-" To enable formatting with `rustfmt`:
-" 1. Execute `rustup component add rustfmt`
-" 2. Activate with :RustFmt command
-Plug 'rust-lang/rust.vim'
-
 " A file system explorer in Vim
 Plug 'preservim/nerdtree'
 
@@ -59,18 +53,9 @@ Plug 'preservim/nerdtree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-" Using CoC for LSP
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 " Adds icons to popular plugins
 " Requires: a Nerd Font installed and used
 Plug 'ryanoasis/vim-devicons'
-
-if has('nvim')
-  Plug 'echasnovski/mini.nvim'
-  " Open folders as vim buffers and manipulate files
-  Plug 'stevearc/oil.nvim'
-endif
 
 " Initialize plugin system
 " - Automatically executes `filetype plugin indent on` and `syntax enable`.
@@ -84,7 +69,6 @@ let g:airline#extensions#tabline#enabled = 1
 " Disable unless the system/terminal uses Powerline or Nerd Fonts.
 let g:airline_powerline_fonts = 1
 
-let g:airline#extensions#coc#enabled = 1
 let g:airline#extensions#nerdtree_statusline = 1
 
 " devicons settings
@@ -92,6 +76,11 @@ let g:webdevicons_enable = 1
 let g:webdevicons_enable_nerdtree = 1
 let g:webdevicons_enable_airline_tabline = 1
 let g:webdevicons_enable_airline_statusline = 1
+
+
+" map the <SPACE> key to the <Leader> key, since we use it a lot
+nnoremap <SPACE> <Nop>
+map <SPACE> <Leader>
 
 
 " NERDTree settings
@@ -152,35 +141,17 @@ syntax enable
 set background=light
 colorscheme solarized
 " Terminal colors for solarized color scheme
-if has('nvim')
-  let g:terminal_color_0 = '#002b36'  " brblack
-  let g:terminal_color_1 = '#073642'  " black
-  let g:terminal_color_2 = '#586e75'  " brgreen
-  let g:terminal_color_3 = '#657b83'  " bryellow
-  let g:terminal_color_4 = '#839496'  " brblue
-  let g:terminal_color_5 = '#93a1a1'  " brcyan
-  let g:terminal_color_6 = '#eee8d5'  " white
-  let g:terminal_color_7 = '#fdf6e3'  " brwhite
-  let g:terminal_color_8 = '#b58900'  " yellow
-  let g:terminal_color_9 = '#cb4b16'  " brred
-  let g:terminal_color_10 = '#dc322f' " red
-  let g:terminal_color_11 = '#d33682' " magenta
-  let g:terminal_color_12 = '#6c71c4' " brmagenta
-  let g:terminal_color_13 = '#268bd2' " blue
-  let g:terminal_color_14 = '#2aa198' " cyan
-  let g:terminal_color_15 = '#859900' " green
-else
-  let g:terminal_ansi_colors = [
-    \ '#002b36', '#073642', '#586e75', '#657b83',
-    \ '#839496', '#93a1a1', '#eee8d5', '#fdf6e3',
-    \ '#b58900', '#cb4b16', '#dc322f', '#d33682',
-    \ '#6c71c4', '#268bd2', '#2aa198', '#859900'
-  \ ]
-endif
+let g:terminal_ansi_colors = [
+  \ '#002b36', '#073642', '#586e75', '#657b83',
+  \ '#839496', '#93a1a1', '#eee8d5', '#fdf6e3',
+  \ '#b58900', '#cb4b16', '#dc322f', '#d33682',
+  \ '#6c71c4', '#268bd2', '#2aa198', '#859900'
+\ ]
 
 set hlsearch  " Clear highlights afterward with <C-l>; mapped by vim-sensible
 set ruler
 set colorcolumn=80,120
+hi ColorColumn ctermbg=6 guibg=#eee8d5  " Match Solarized light colorscheme
 
 set number
 " toggle line numbers and fold column for easy copying:
@@ -203,17 +174,13 @@ set directory=.swp/,~/.swp/,/tmp//
 set backupdir=.backup/,~/.backup/,/tmp//
 set undodir=.undo/,~/.undo/,/tmp//
 
-if !has('nvim')
-  " To escape the auto-closer here, use <C-v> in insert mode.
-  inoremap " ""<left>
-  inoremap ' ''<left>
-  inoremap ( ()<left>
-  inoremap [ []<left>
-  inoremap { {}<left>
-  inoremap {<CR> {<CR>}<ESC>O
-  inoremap {;<CR> {<CR>};<ESC>O
-  " On nvim, the above is not necessary; they are superseded by mini.pairs
-endif
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 
 " Remap activator for vim-easymotion to match mini.jump2d
 " e.g. <Leader>w to search for jump anchors to words forward in visible buffer
@@ -225,12 +192,6 @@ nmap s <Plug>(easymotion-overwin-f2)
 " Set the characters used for jump marker name; lowercase only to avoid chording
 let g:EasyMotion_keys = 'hklyuiopnm,qwertzxcvbasdgjf;'
 
-" CoC-recommended settings below
-
-" Some servers have issues with backup files, see #649
-set nobackup
-set nowritebackup
-
 " Having longer updatetime (default is 4000 ms = 4s) leads to noticeable
 " delays and poor user experience
 set updatetime=300
@@ -239,80 +200,4 @@ set updatetime=300
 " each time diagnostics appear/become resolved.
 " The gutter is also useful for displaying marks, diff symbols, etc.
 set signcolumn=yes
-
-" Use tab for trigger completion with characters ahead and navigate
-" NOTE: There's always complete item selected by default, you may want to enable
-" no select by `"suggest.noselect": true` in your configuration file
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>CheckBackspace() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<S-TAB>"
-
-" Use <c-space> to trigger completion.
-" inoremap <silent><expr> <c-space> coc#refresh()
-
-" Make <CR> to accept selected completion item or notify coc.nvim to format
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-function! CheckBackspace() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` command to get all diagnostics of current buffer in
-" location list
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gt <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Use K to show documentation in preview window
-nnoremap <silent> K :call ShowDocumentation()<CR>
-
-function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-    call CocActionAsync('doHover')
-  else
-    call feedkeys('K', 'in')
-  endif
-endfunction
-
-" Highlight the symbol and its references when holding the cursor
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
-" Symbol renaming
-nmap <leader>rn <Plug>(coc-rename)
-
-" The default PMenu (floating selection menu box) that appears has a color
-" scheme that clashes with solarized, making it hard to see.
-" I copied these color settings from current PMenu values from :hi
-highlight CocFloating cterm=reverse ctermfg=11 ctermbg=7 guibg=LightMagenta
-
-" end CoC-recommended settings above
-
-" My CoC settings
-
-" Disable auto-complete suggestions in Markdown files
-autocmd FileType markdown let b:coc_suggest_disable = 1
-
-" CoC extensions settings below
-
-" Use :Prettier to format the current buffer by coc-prettier.
-command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
-
-" end CoC extensions settings above
-
-
-if has('nvim')
-  lua require('init')
-endif
 
