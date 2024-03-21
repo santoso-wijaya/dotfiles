@@ -151,7 +151,7 @@ let g:terminal_ansi_colors = [
 set hlsearch  " Clear highlights afterward with <C-l>; mapped by vim-sensible
 set ruler
 set colorcolumn=80,120
-hi ColorColumn ctermbg=6 guibg=#eee8d5  " Match Solarized light colorscheme
+hi ColorColumn ctermbg=7 guibg=#eee8d5  " Match Solarized light colorscheme
 
 set number
 " toggle line numbers and fold column for easy copying:
