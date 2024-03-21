@@ -11,7 +11,9 @@ dynamic_padding = true
 
 [font]
 normal.family = "MonaspiceNe Nerd Font"
-size = 12
+size = 14
+offset = { x = 0, y = 2 }
+glyph_offset = { x = 0, y = 1 }
 
 [env]
 TERM = "xterm-256color"
