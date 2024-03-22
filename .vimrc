@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 " Installing vim-plug:
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -152,6 +154,9 @@ set hlsearch  " Clear highlights afterward with <C-l>; mapped by vim-sensible
 set ruler
 set colorcolumn=80,120
 hi ColorColumn ctermbg=7 guibg=#eee8d5  " Match Solarized light colorscheme
+
+set list
+set listchars=tab:»-»,trail:·,nbsp:␣,extends:▶,precedes:◀
 
 set number
 " toggle line numbers and fold column for easy copying:
