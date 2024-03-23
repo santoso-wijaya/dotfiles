@@ -9,7 +9,6 @@ git config --global alias.last "log -1 HEAD"
 git config --global alias.adog "log --all --decorate --oneline --graph"
 git config --global alias.xl "log --graph --abbrev=commit --decorate --date=relative --all"
 
-
 # Install pathogen
 mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
@@ -18,11 +17,8 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 pushd ~
 git clone --recurse-submodules https://github.com/santoso-wijaya/dotfiles.git
 cd dotfiles
-find $(pwd -P)/.vim/bundle -maxdepth 1 -type d -execdir \
-  ln -sf $(pwd -P)/.vim/bundle/{} ${HOME}/.vim/bundle/{} \;
 ln -sf $(pwd -P)/.vimrc ${HOME}/.vimrc
 popd
-
 
 # Install vim-plug
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -31,7 +27,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 # Activate plugins specified in .vimrc
 # See: https://github.com/junegunn/vim-plug/issues/675#issuecomment-328157169
 vim +'PlugInstall --sync' +qa
-
 
 # # NPM is required to install CoC extensions
 # npm -v
@@ -47,18 +42,15 @@ vim +'PlugInstall --sync' +qa
 # # Link CocConfig file
 # ln -sf ~/dotfiles/.vim/coc-settings.json ~/.vim/coc-settings.json
 
-
 # Install Starship prompt
 curl -sS https://starship.rs/install.sh | sh -s -- --yes
 touch ~/.bashrc
-echo -e 'eval "$(starship init bash)"' >> ~/.bashrc
+echo -e 'eval "$(starship init bash)"' >>~/.bashrc
 # Configure Starship
 pushd ~
 cd dotfiles
 ln -sf $(pwd -P)/.config/starship.toml ${HOME}/.config/starship.toml
 popd
 
-
-echo -e "dotfiles have been set up by:" > ~/dotfiles.txt
-echo -e "https://github.com/santoso-wijaya/dotfiles/blob/main/install.sh" >> ~/dotfiles.txt
-
+echo -e "dotfiles have been set up by:" >~/dotfiles.txt
+echo -e "https://github.com/santoso-wijaya/dotfiles/blob/main/install.sh" >>~/dotfiles.txt

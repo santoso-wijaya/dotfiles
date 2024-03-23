@@ -141,7 +141,8 @@ filetype plugin indent on
 
 syntax enable
 set background=light
-colorscheme solarized
+" See: https://github.com/junegunn/vim-plug/issues/225#issuecomment-238938612
+silent! colorscheme solarized
 " Terminal colors for solarized color scheme
 let g:terminal_ansi_colors = [
   \ '#002b36', '#073642', '#586e75', '#657b83',
