@@ -45,7 +45,7 @@ white = '0xfdf6e3'
 bindings = [
   # The default "Space"+"Shift|Control" keybinding for this is captured by the
   # Mac OS for something... it doesn't trigger Vi mode unless I remap it here.
-  { key = "Space", mods = "Shift", mode = "~Search", action = "ToggleViMode" },
+  { key = "Space", mods = "Shift|Alt", mode = "~Search", action = "ToggleViMode" },
   { key = "Right", mods = "Alt", chars = "\u001BF" },
   { key = "Left", mods = "Alt", chars = "\u001BB" },
 ]
