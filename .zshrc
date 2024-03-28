@@ -6,6 +6,12 @@ if [ -d /opt/homebrew/opt/chruby ]; then
   chruby ruby-3.3.0 # run chruby to see actual version
 fi
 
+if [ -d $HOME/.pyenv ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
+
 if which nvim >/dev/null; then
   function use-nvim  {
     alias vim="nvim"
@@ -26,3 +32,4 @@ function ya() {
 if which starship > /dev/null; then
   eval "$(starship init zsh)"
 fi
+
