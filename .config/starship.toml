@@ -1,15 +1,15 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](sol_orange)\
+[](lun_orange)\
 $os\
 $username\
-[](bg:sol_yellow fg:sol_orange)\
+[](bg:lun_yellow fg:lun_orange)\
 $directory\
-[](fg:sol_yellow bg:sol_cyan)\
+[](fg:lun_yellow bg:lun_cyan)\
 $git_branch\
 $git_status\
-[](fg:sol_cyan bg:sol_blue)\
+[](fg:lun_cyan bg:lun_blue)\
 $c\
 $rust\
 $golang\
@@ -20,72 +20,66 @@ $kotlin\
 $haskell\
 $python\
 $ruby\
-[](fg:sol_blue bg:sol_violet)\
+[](fg:lun_blue bg:lun_violet)\
 $docker_context\
-[](fg:sol_violet bg:base2)\
+[](fg:lun_violet bg:bg_1)\
 $time\
-[ ](fg:base2)\
+[ ](fg:bg_1)\
 $line_break$character"""
 
-palette = 'solarized'
+palette = 'selenized_light'
 
-[palettes.solarized]
+[palettes.selenized_light]
 # background and content tones:
-#                           # DARK MODE             | LIGHT MODE
-base03        = '#002b36'   # background            | -
-base02        = '#073642'   # background highlights | -
-base01        = '#586e75'   # comments              | opt. emph. content
-base00        = '#657b83'   # -                     | primary content
-base0         = '#839496'   # primary content       | -
-base1         = '#93a1a1'   # opt. emph. content    | comments
-base2         = '#eee8d5'   # -                     | background highlights
-base3         = '#fdf6e3'   # -                     | background
+bg_0 = '#fbf3db'
+bg_1 = '#ece3cc'
+bg_2 = '#d5cdb6'
+dim_0 = '#909995'
+fg_0 = '#53676d'
+fg_1 = '#3a4d53'
 # accent colors:
-sol_yellow    = '#b58900'
-sol_orange    = '#cb4b16'
-sol_red       = '#dc322f'
-sol_magenta   = '#d33682'
-sol_violet    = '#6c71c4'
-sol_blue      = '#268bd2'
-sol_cyan      = '#2aa198'
-sol_green     = '#859900'
-# Note that for tones, the normal relationship for background and body text
-# is `base03:base0` for dark mode and `base3:base00` for light mode.
-# Notice the "flipping" of leading 0?
+lun_red = '#d2212d'
+lun_magenta = '#ca4898'
+lun_orange = '#c25d1e'
+lun_yellow = '#ad8900'
+lun_green = '#489100'
+lun_blue = '#0072d4'
+lun_cyan = '#009c8f'
+lun_violet = '#8762c6'
 
 [os]
 disabled = false
-style = "bg:sol_orange fg:base3"
+style = "bg:lun_orange fg:bg_0"
 
 [os.symbols]
-Macos     = ""
-Ubuntu    = "󰕈"
-Windows   = "󰍲"
-Alpine    = ""
-Amazon    = ""
-Android   = ""
-Arch      = "󰣇"
-Artix     = "󰣇"
-CentOS    = ""
-Debian    = "󰣚"
-Fedora    = "󰣛"
-Gentoo    = "󰣨"
-Linux     = "󰌽"
-Raspbian  = "󰐿"
-Redhat    = "󱄛"
-SUSE      = ""
-Mint      = "󰣭"
-Manjaro   = ""
+Macos = ""
+Ubuntu = "󰕈"
+Windows = "󰍲"
+Alpine = ""
+Amazon = ""
+Android = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Fedora = "󰣛"
+Gentoo = "󰣨"
+Linux = "󰌽"
+Raspbian = "󰐿"
+Redhat = "󱄛"
+SUSE = ""
+Mint = "󰣭"
+Manjaro = ""
 
 [username]
 show_always = true
-style_user = "bg:sol_orange fg:base3"
-style_root = "bg:sol_orange fg:base3"
+style_user = "bg:lun_orange fg:bg_0"
+style_root = "bg:lun_orange fg:bg_0"
 format = '[ $user ]($style)'
 
 [directory]
-style = "bg:sol_yellow fg:base3"
-read_only_style = "bg:sol_yellow fg:sol_magenta"
+style = "bg:lun_yellow fg:bg_0"
+read_only_style = "bg:lun_yellow fg:lun_magenta"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -100,83 +94,82 @@ truncation_symbol = "…/"
 
 [git_branch]
 symbol = ""
-style = "bg:sol_cyan"
-format = '[[ $symbol $branch ](fg:base3 bg:sol_cyan)]($style)'
+style = "bg:lun_cyan"
+format = '[[ $symbol $branch ](fg:bg_0 bg:lun_cyan)]($style)'
 
 [git_status]
-style = "bg:sol_cyan"
-format = '[[($all_status$ahead_behind )](fg:base3 bg:sol_cyan)]($style)'
+style = "bg:lun_cyan"
+format = '[[($all_status$ahead_behind )](fg:bg_0 bg:lun_cyan)]($style)'
 
 [nodejs]
 symbol = ""
-style = "bg:sol_blue"
-format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+style = "bg:lun_blue"
+format = '[[ $symbol( $version) ](fg:bg_0 bg:lun_blue)]($style)'
 
 [c]
 symbol = " "
-style = "bg:sol_blue"
-format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+style = "bg:lun_blue"
+format = '[[ $symbol( $version) ](fg:bg_0 bg:lun_blue)]($style)'
 
 [rust]
 symbol = ""
-style = "bg:sol_blue"
-format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+style = "bg:lun_blue"
+format = '[[ $symbol( $version) ](fg:bg_0 bg:lun_blue)]($style)'
 
 [golang]
 symbol = ""
-style = "bg:sol_blue"
-format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+style = "bg:lun_blue"
+format = '[[ $symbol( $version) ](fg:bg_0 bg:lun_blue)]($style)'
 
 [php]
 symbol = ""
-style = "bg:sol_blue"
-format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+style = "bg:lun_blue"
+format = '[[ $symbol( $version) ](fg:bg_0 bg:lun_blue)]($style)'
 
 [java]
 symbol = " "
-style = "bg:sol_blue"
-format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+style = "bg:lun_blue"
+format = '[[ $symbol( $version) ](fg:bg_0 bg:lun_blue)]($style)'
 
 [kotlin]
 symbol = ""
-style = "bg:sol_blue"
-format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+style = "bg:lun_blue"
+format = '[[ $symbol( $version) ](fg:bg_0 bg:lun_blue)]($style)'
 
 [haskell]
 symbol = ""
-style = "bg:sol_blue"
-format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+style = "bg:lun_blue"
+format = '[[ $symbol( $version) ](fg:bg_0 bg:lun_blue)]($style)'
 
 [python]
 symbol = ""
-style = "bg:sol_blue"
-format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+style = "bg:lun_blue"
+format = '[[ $symbol( $version) ](fg:bg_0 bg:lun_blue)]($style)'
 
 [ruby]
 symbol = ""
-style = "bg:sol_blue"
-format = '[[ $symbol( $version) ](fg:base3 bg:sol_blue)]($style)'
+style = "bg:lun_blue"
+format = '[[ $symbol( $version) ](fg:bg_0 bg:lun_blue)]($style)'
 
 [docker_context]
 symbol = ""
-style = "bg:base2"
-format = '[[ $symbol( $context) ](fg:base3 bg:sol_violet)]($style)'
+style = "bg:bg_1"
+format = '[[ $symbol( $context) ](fg:bg_0 bg:lun_violet)]($style)'
 
 [time]
 disabled = false
 time_format = "%R"
-style = "bg:base3"
-format = '[[  $time ](fg:base00 bg:base2)]($style)'
+style = "bg:bg_0"
+format = '[[  $time ](fg:fg_0 bg:bg_1)]($style)'
 
 [line_break]
 disabled = false
 
 [character]
 disabled = false
-success_symbol = '[❯](bold fg:sol_green)'
-error_symbol = '[✗](bold fg:sol_red)'
-vimcmd_symbol = '[V](bold fg:sol_green) '
-vimcmd_replace_one_symbol = '[❮](bold fg:sol_violet)'
-vimcmd_replace_symbol = '[❮](bold fg:sol_violet)'
-vimcmd_visual_symbol = '[❮](bold fg:sol_yellow)'
-
+success_symbol = '[❯](bold fg:lun_green)'
+error_symbol = '[✗](bold fg:lun_red)'
+vimcmd_symbol = '[V](bold fg:lun_green) '
+vimcmd_replace_one_symbol = '[❮](bold fg:lun_violet)'
+vimcmd_replace_symbol = '[❮](bold fg:lun_violet)'
+vimcmd_visual_symbol = '[❮](bold fg:lun_yellow)'
