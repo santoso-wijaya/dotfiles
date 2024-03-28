@@ -22,9 +22,9 @@ $python\
 $ruby\
 [](fg:lun_blue bg:lun_violet)\
 $docker_context\
-[](fg:lun_violet bg:bg_1)\
+[](fg:lun_violet bg:bg_2)\
 $time\
-[ ](fg:bg_1)\
+[ ](fg:bg_2)\
 $line_break$character"""
 
 palette = 'selenized_light'
@@ -160,7 +160,7 @@ format = '[[ $symbol( $context) ](fg:bg_0 bg:lun_violet)]($style)'
 disabled = false
 time_format = "%R"
 style = "bg:bg_0"
-format = '[[  $time ](fg:fg_0 bg:bg_1)]($style)'
+format = '[[  $time ](fg:fg_0 bg:bg_2)]($style)'
 
 [line_break]
 disabled = false
