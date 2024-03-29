@@ -41,7 +41,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() }}   " with a post-update hook
 " Binds some nifty, flighty navigation modes across a file
 Plug 'easymotion/vim-easymotion'
 
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized' " TODO: find a Selenized alternative
 Plug 'ap/vim-css-color'
 
 " Any valid git URL is allowed
@@ -65,7 +65,7 @@ call plug#end()
 
 
 " Airline customizations; experiment at runtime with `:AirlineTheme` command.
-let g:airline_theme='solarized'
+let g:airline_theme='selenized'
 " Automatically displays all buffers when there's only one tab open.
 let g:airline#extensions#tabline#enabled = 1
 " Disable unless the system/terminal uses Powerline or Nerd Fonts.
@@ -139,22 +139,16 @@ set encoding=UTF-8
 syntax on
 filetype plugin indent on
 
+set termguicolors
 syntax enable
 set background=light
-" See: https://github.com/junegunn/vim-plug/issues/225#issuecomment-238938612
-silent! colorscheme solarized
-" Terminal colors for solarized color scheme
-let g:terminal_ansi_colors = [
-  \ '#002b36', '#073642', '#586e75', '#657b83',
-  \ '#839496', '#93a1a1', '#eee8d5', '#fdf6e3',
-  \ '#b58900', '#cb4b16', '#dc322f', '#d33682',
-  \ '#6c71c4', '#268bd2', '#2aa198', '#859900'
-\ ]
+colorscheme selenized
+" See: https://github.com/jan-warchol/selenized/tree/master/editors/vim
 
 set hlsearch  " Clear highlights afterward with <C-l>; mapped by vim-sensible
 set ruler
 set colorcolumn=80,120
-hi ColorColumn ctermbg=7 guibg=#eee8d5  " Match Solarized light colorscheme
+hi ColorColumn ctermbg=0 guibg=#cad8d9  " Match Selenized light colorscheme
 
 set list
 set listchars=tab:»-»,trail:·,nbsp:␣,extends:▶,precedes:◀
