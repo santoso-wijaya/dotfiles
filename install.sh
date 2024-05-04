@@ -17,12 +17,13 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 pushd ~
 git clone --recurse-submodules https://github.com/santoso-wijaya/dotfiles.git
 cd dotfiles
+rm -rf ${HOME}/.vim && ln -sf $(pwd -P)/.vim ${HOME}/.vim
 ln -sf $(pwd -P)/.vimrc ${HOME}/.vimrc
 popd
 
 # Install vim-plug
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+#   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Activate plugins specified in .vimrc
 # See: https://github.com/junegunn/vim-plug/issues/675#issuecomment-328157169
