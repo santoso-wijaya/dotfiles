@@ -33,3 +33,13 @@ if which starship > /dev/null; then
   eval "$(starship init zsh)"
 fi
 
+# Enable auto-activation of virtualenvs with pyenv.
+eval "$(pyenv virtualenv-init -)"
+
+# Created by `pipx` on 2025-01-31 17:25:37
+export PATH="$PATH:/Users/santoso/.local/bin"
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/santoso/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions

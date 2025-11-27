@@ -1,6 +1,6 @@
 # https://alacritty.org/config-alacritty.html
 
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 args = ["-l"]
 
@@ -50,3 +50,5 @@ bindings = [
   { key = "Right", mods = "Alt", chars = "\u001BF" },
   { key = "Left", mods = "Alt", chars = "\u001BB" },
 ]
+
+[terminal]
